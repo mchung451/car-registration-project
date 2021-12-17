@@ -1,4 +1,4 @@
-Feature: Validating Information About Cars
+Feature: I check an input file for registration plates and search online for 
 
     I want to find registration plates embedded in a text file
 

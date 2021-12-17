@@ -73,10 +73,24 @@ for (let x = 0; x < filteredData.length; x++) {
       orderedPopulatedArray.push(populatedArray[y]);
       break;
     }
-    if (y === (populatedArray.length - 1)) {
-      orderedPopulatedArray.push(populatedArray[x-1]);
+    if (y == (populatedArray.length - 1)) {
+      orderedPopulatedArray.push(populatedArray[x+1]);
     }
   }
 }
 
+// for (let x = 0; x < populatedArray.length; x++) {
+//   for (let y = 0; y < filteredData.length; y++) {
+//     if (populatedArray[x].includes(filteredData[y])) {
+//       orderedPopulatedArray.push(populatedArray[x])
+//       break;
+//     }
+//     if (y === (populatedArray.length -1)) {
+//       orderedPopulatedArray.push(populatedArray[x])
+//     }
+//   }
+// }
+
 console.log(orderedPopulatedArray);
+
+

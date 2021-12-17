@@ -5,10 +5,18 @@
 // check out the link below and learn how to write your first test:
 // https://on.cypress.io/writing-first-test
 
+
+
+import orderedPopulatedArray from '../../test.js';
+import filteredData from '../../test.js';
+
+
+
 describe("gathering data from the input file", () => {
   it("validation of text file", () => {
     cy.readFile("./cypress/fixtures/car_input.txt").then(function (value) {
       console.log(value);
+      console.log(orderedPopulatedArray);
     });
   });
 
@@ -116,7 +124,7 @@ describe("gathering information from the website", () => {
       
       const plates = ["DN09HRM", "BW57BOW", "KT17DLX", "SG18HTN"];
       const validPlateMessage = "View Mileage History";
-      const dummy = ['DN09HRM,BMW,320D Se,Black,2009','BW57BOF,Toyota,Yaris T2,Black,2010','KT17DLX,Skoda,Superb Sportline Tdi S-A,White,2017','SG18HTN,Volkswagen,Golf Se Navigation Tsi Evo,White,2018'];
+      const dummy = ['DN09HRM,BMW,320D Se,Black,2009','','KT17DLX,Skoda,Superb Sportline Tdi S-A,White,2017','SG18HTN,Volkswagen,Golf Se Navigation Tsi Evo,White,2018'];
 
       for (let i = 0; i < plates.length; i++){
         cy.visit("/");
@@ -140,7 +148,6 @@ describe("gathering information from the website", () => {
           } else {
             cy.log(`${plates[i]} does not match the output`)
           }
-
           } else {
             cy.log(`${plates[i]} is not a valid registration plate`)
 
@@ -149,7 +156,11 @@ describe("gathering information from the website", () => {
         })
       }
 
-      // for (let i=0;i<plates.length;i++){
+    })
+});
+
+
+          // for (let i=0;i<plates.length;i++){
       //   cy.visit("/");
       //   cy.get("#vrm-input").type(plates[i]);
       //   cy.get(".jsx-1164392954 ").click();
@@ -173,11 +184,6 @@ describe("gathering information from the website", () => {
 
 
       // }
-    })
-});
-
-
-
 
 
       // Verification that the registration plate information displayed matches the registration plate submitted
